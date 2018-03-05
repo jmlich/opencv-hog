@@ -2,9 +2,9 @@
 # opencv-hog
 
 - extracts feature vector from image (see feature_vector function)
--- "simple" hog
--- hog_cv
--- color histogram
+ - "simple" hog
+ - hog_cv
+ - color histogram
 - support vector machines classification
 -- training set (first 80% of data) generates model
 -- testing set (last 20% of data) evaluates model
