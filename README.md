@@ -1,12 +1,13 @@
 
-opencv based classifier of pictures. 
+# opencv-hog
 
 - extracts feature vector from image (see feature_vector function)
 -- "simple" hog
 -- hog_cv
 -- color histogram
-- svm model is trained and evaluated
--- size of the training is 80% of data set
+- support vector machines classification
+-- training set (first 80% of data) generates model
+-- testing set (last 20% of data) evaluates model
 - list of true/false positive/negative of testing set is printed in html to stdout
 
 The input is defined as set of pictures with same resolution (e.g. 48x48) and class name
