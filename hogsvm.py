@@ -61,7 +61,7 @@ def feature_vector(img):
 if __name__ == '__main__':
 
     if len(sys.argv) != 2:
-        print ("usage: {0} anot.csv ptc".format(sys.argv[0]))
+        print ("usage: {0} anot.csv".format(sys.argv[0]))
         print ("  anot.csv consits of \"filename,class\\n\"");
         sys.exit(1)
 
