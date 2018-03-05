@@ -24,7 +24,7 @@ def hog(img):
 ## [hog]
 
 def color_histogram(img):
-    bins_per_color = 64
+    bins_per_color = 128
     chans = cv.split(img)
     colors = ("b", "g", "r")
     features = []
@@ -83,7 +83,6 @@ if __name__ == '__main__':
             if img is None:
                 raise Exception("Error: file {} is not image".format(img_filename))
 
-#            cells.append(hog(img))
             cells.append(feature_vector(img));
             if not anot in classes:
                 classes.append(anot)
@@ -118,16 +117,16 @@ if __name__ == '__main__':
     test_data = np.float32(test_cells).reshape(-1,feature_shape )
 
     svm = cv.ml.SVM_create()
-    svm.setKernel(cv.ml.SVM_LINEAR)
-#    svm.setKernel(cv.ml.SVM_RBF)
+#    svm.setKernel(cv.ml.SVM_LINEAR)
+    svm.setKernel(cv.ml.SVM_RBF)
 
     svm.setType(cv.ml.SVM_C_SVC)
 
-#    svm.setC(2.67)
-#    svm.setGamma(5.383)
+    svm.setC(2.67)
+    svm.setGamma(5.383)
 
 
-    print("c = {0}; gamma = {1}; isTrained = {2}".format(svm.getC(), svm.getGamma(), svm.isTrained()))
+#    print("c = {0}; gamma = {1}; isTrained = {2}".format(svm.getC(), svm.getGamma(), svm.isTrained()))
 
     # train_data.shape = (2500,feature_shape), responses.shape: (2500, 1)
 #    svm.train(train_data, cv.ml.ROW_SAMPLE, train_anot)

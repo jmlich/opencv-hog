@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DATASET_SIZE=125
+#DATASET_SIZE=125
 #DATASET_SIZE=500
 #DATASET_SIZE=1000
-#DATASET_SIZE=5000
+DATASET_SIZE=5000
 #DATASET_SIZE=25446
 #DATASET_SIZE=125240
 #DATASET_SIZE=150686
@@ -33,7 +33,8 @@ if [ "$PREPARE_DATASET" = 1 ]; then
         cp "./anot.$DATASET_SIZE.txt" "./anot.txt"
     else
 
-        positive_dirs="/var/www/html/fire/labelme_samples-80/"
+#        positive_dirs="/var/www/html/fire/labelme_samples-80/"
+        positive_dirs="/var/www/html/fire/labelme_samples-100/"
 #        positive_dirs="/var/www/html/fire/labelme_samples-center/"
 
 
